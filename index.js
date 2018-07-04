@@ -9,18 +9,62 @@ const books = [
     title: "Harry Potter and the Sorcerer's stone",
     author: 'J.K. Rowling',
     genre: 'Fantasy',
+    rating: '4.46',
   },
   {
     title: 'Jurassic Park',
     author: 'Michael Crichton',
     genre: 'Sci-Fi',
+    rating: '3.98',
+  },
+  {
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    genre: 'Literary Fiction',
+    rating: '4.25',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    genre: 'Sci-Fi',
+    rating: '3.98',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    genre: 'Sci-Fi',
+    rating: '3.98',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    genre: 'Sci-Fi',
+    rating: '3.98',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    genre: 'Sci-Fi',
+    rating: '3.98',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    genre: 'Sci-Fi',
+    rating: '3.98',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    genre: 'Sci-Fi',
+    rating: '3.98',
   },
 ];
 
 // The GraphQL schema in string form
 const typeDefs = `
   type Query { books: [Book] }
-  type Book { title: String, author: String, genre: String }
+  type Book { title: String, author: String, genre: String, rating: String }
 `;
 
 // The resolvers
@@ -44,6 +88,6 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 // Start the server
-app.listen(3000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log('Go to http://localhost:3000/graphiql to run queries!');
 });
