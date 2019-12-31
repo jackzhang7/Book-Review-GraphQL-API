@@ -8,31 +8,59 @@ const { makeExecutableSchema } = require('graphql-tools');
 const books = [
   {
     id: '1',
-    title: "Harry Potter and the Sorcerer's stone",
-    author: 'J.K. Rowling',
-    genre: 'Fantasy',
-    rating: '4.46',
+    title: "The Handmaid's Tale",
+    author: 'Margaret Atwood',
+    genre: 'Speculative Fiction',
+    rating: '5.0',
   },
   {
     id: '2',
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-    genre: 'Sci-Fi',
-    rating: '3.98',
+    title: 'Middlesex',
+    author: 'Jeffrey Eugenides',
+    genre: 'Literary Fiction',
+    rating: '4.0',
   },
   {
     id: '3',
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
     genre: 'Literary Fiction',
-    rating: '4.25',
+    rating: '4.5',
   },
   {
     id: '4',
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-    genre: 'Sci-Fi',
-    rating: '3.98',
+    title: 'Alias Grace',
+    author: 'Margaret Atwood',
+    genre: 'Literary Fiction',
+    rating: 'TBD',
+  },
+  {
+    id: '5',
+    title: 'Ariel',
+    author: 'Sylvia Plath',
+    genre: 'Poetry',
+    rating: '5.0',
+  },
+  {
+    id: '6',
+    title: 'Wicked Plants',
+    author: 'Amy Stewart',
+    genre: 'Non-Fiction',
+    rating: '4.0',
+  },
+  {
+    id: '7',
+    title: 'The Red Tent',
+    author: 'Anita Diamant',
+    genre: 'Literary Fiction',
+    rating: '4.5',
+  },
+  {
+    id: '8',
+    title: 'Family Ties',
+    author: 'Clarice Lispector',
+    genre: 'Short Stories',
+    rating: '4.5',
   },
 ];
 
@@ -65,6 +93,6 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 // Start the server
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Go to http://localhost:3000/graphiql to run queries!');
 });
